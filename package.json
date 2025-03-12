@@ -1,0 +1,14 @@
+{
+  "name": "course-selling-app",
+  "version": "1.0.0",
+  "description": "a basic full stack app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mongoose": "^8.12.1"
+  }
+}
