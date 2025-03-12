@@ -1,8 +1,8 @@
 const { User } = require("../db");
 function userMiddleware(req, res, next) {
     
-    const username = req.headers.username; // harkirat@gmail.com
-    const password = req.headers.password; /// 123456
+    const username = req.headers.username; 
+    const password = req.headers.password; 
 
     User.findOne({
         username: username,
