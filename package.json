@@ -2,7 +2,7 @@
   "name": "course-selling-app",
   "version": "1.0.0",
   "description": "a basic full stack app",
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
     "mongoose": "^8.12.1"
   },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2"
   }
 }
