@@ -4,7 +4,7 @@ const app = express();
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
 
-//middlewares
+//middlewares 
 app.use(bodyParser.json());
 app.use("'admin", adminRouter)
 app.use("/user", userRouter)

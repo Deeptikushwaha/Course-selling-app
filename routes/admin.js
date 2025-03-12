@@ -1,7 +1,7 @@
 const express = require("express");
 const adminMiddleware = require("../middleware/admin");
 const { Admin } = require('../db');
-const router = express.Router();
+const router = express.Router(); 
 
 router.post('/signup', async (req,res)=>{
     const username = req.body.username;
