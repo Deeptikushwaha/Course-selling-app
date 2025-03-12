@@ -1,4 +1,4 @@
-
+const { User } = require("../db");
 function userMiddleware(req, res, next) {
     
     const username = req.headers.username; // harkirat@gmail.com

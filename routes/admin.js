@@ -1,6 +1,6 @@
 const express = require("express");
 const adminMiddleware = require("../middleware/admin");
-const { Admin } = require('../db');
+const { Admin, Course } = require('../db');
 const router = express.Router(); 
 
 router.post('/signup', async (req,res)=>{
@@ -16,7 +16,7 @@ router.post('/signup', async (req,res)=>{
     })
 });
 
-router.post('/courses', adminMiddleware, async (req,res)=>{
+router.post('/courses', adminMiddleware, async(req,res)=>{
     const title = req.body.title;
     const description = req.body.description;
     const imageLink = req.body.imageLink;
@@ -34,7 +34,7 @@ router.post('/courses', adminMiddleware, async (req,res)=>{
     })
 });
 
-router.get('/courses', adminMiddleware, async (req,res)=>{
+router.get('/courses', adminMiddleware, async(req,res)=>{
     const response = await Course.find({});
 
     res.json({

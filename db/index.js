@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL)
+.then(()=>{
+    console.log("Connected to database");
+})
+.catch(()=>{
+    console.log('connection failed!');
+});
 
 const AdminSchema = new mongoose.Schema({
     username: String,

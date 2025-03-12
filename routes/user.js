@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const userMiddleware = require("../middleware/user");
+const userMiddleware = require("../middleware/user"); 
+const { User, Course } = require("../db");
+
 
 // User Routes 
 router.post('/signup', (req, res) => {
@@ -15,7 +17,7 @@ router.post('/signup', (req, res) => {
     })
 });
 
-router.get('/courses', async (req, res) => {
+router.get('/courses', async(req, res) => {
     const response = await Course.find({});
 
      res.json({
@@ -23,7 +25,7 @@ router.get('/courses', async (req, res) => {
      })
 });
 
-router.post('/courses/:courseId', userMiddleware, async (req, res) => {
+router.post('/courses/:courseId', userMiddleware, async(req, res) => {
     const courseId = req.params.courseId;
     const username = req.headers.username;
 
@@ -39,7 +41,7 @@ router.post('/courses/:courseId', userMiddleware, async (req, res) => {
     })
 });
 
-router.get('/purchasedCourses', userMiddleware, async (req, res) => {
+router.get('/purchasedCourses', userMiddleware, async(req, res) => {
     const user = await User.findOne({
         username: req.headers.username
     });
